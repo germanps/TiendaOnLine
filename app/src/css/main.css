@@ -1,0 +1,51 @@
+
+*, html{
+    box-sizing: border-box;
+}
+*.*::before,*::after{
+    box-sizing: inherit;
+}
+body{
+	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
+}
+ul{
+    /* list-style: none; */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+}
+.form-control,.btn{
+    border-radius: 0;
+}
+
+
+.sq-container{
+    width: 90%;
+    margin: auto;
+}
+.sq-form-wrapper{
+    width: 480px;
+    margin: 3rem auto;
+}
+#showUsers{
+    display: none;
+}
+
+/* ==== Helper clases ==== */
+.sq-text{
+    color: #747474;
+}
+.sq-font{
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: tahoma;
+}
+.xs-text{
+    font-size: 1.3rem;
+}
+.light{color: red; font-weight: bold;}
+/* ======================= */
