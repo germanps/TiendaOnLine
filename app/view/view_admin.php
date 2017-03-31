@@ -99,34 +99,34 @@
 <div class="modal fade" id="add_new_user_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-        <form name="alta-usuario" action="" role="form" onsubmit="addUsuario();">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Agregar usuario</h4>
-            </div>
-            <div class="modal-body">
-
-                <div class="form-group">
-                    <label for="nameUserId">Nombre</label>
-                    <input name="nameId" type="text" id="nameId" placeholder="Nombre" class="form-control"/>
+            <form method='post' action='../controller/new_user.php' role="form" >
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Agregar usuario</h4>
                 </div>
+                <div class="modal-body">
 
-                <div class="form-group">
-                    <label for="passwordUserId">Password</label>
-                    <input name="passwordId" type="text" id="passwordId" placeholder="Password" class="form-control"/>
+                    <div class="form-group">
+                        <label for="nameUserId">Nombre</label>
+                        <input name="nameUser" type="text" id="nameUserId" placeholder="Nombre" class="form-control" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="passwordUserId">Password</label>
+                        <input name="passwordUser" type="text" id="passwordUserId" placeholder="Password" class="form-control" required/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tipoUserId">Tipo usuario => (0:admin # 1:normal)</label>
+                        <input name="tipoUser" type="text" id="tipoUserId" placeholder="Tipo usuario" class="form-control" required/>
+                    </div>
+
                 </div>
-
-                <div class="form-group">
-                    <label for="tipoUserId">Tipo usuario => (0:admin # 1:normal)</label>
-                    <input name="tipoId" type="text" id="tipoId" placeholder="Tipo usuario" class="form-control"/>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="submit" class="btn btn-primary"">Añadir usuario</button>
                 </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                <button type="submit" class="btn btn-primary"">Añadir usuario</button>
-            </div>
-        </form>
+            </form>
         </div>
     </div>
 </div>
