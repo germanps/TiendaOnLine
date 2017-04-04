@@ -77,7 +77,7 @@
 												<td>$password</td>
 												<td>$tipo_usuario</td>
 												<td><a id='editUser' class='pull-right btn btn-warning btn-sm' data-toggle='modal' data-target='#edit_user_modal'>Editar</a>
-                                                    <a class='pull-right btn btn-danger btn-sm'>Borrar</a>
+                                                    <a href='drop_item.php?item=$id_usuario' class='pull-right btn btn-danger btn-sm'>Borrar</a>
                                                 </td>
 											 </tr>";
 											 $contador_usuarios++;
@@ -272,7 +272,7 @@
 
                     <div class="form-group">
                         <label for="nameCatProduct">ID Categoria</label>
-                        <input name="nameCatProduct" type="number" id="nameCatProduct" placeholder="ID Categoria" class="form-control"/>
+                        <input name="idCatProduct" type="number" id="nameCatProduct" placeholder="ID Categoria" class="form-control"/>
                     </div>
 
                     <div class="form-group">
