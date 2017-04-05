@@ -39,7 +39,7 @@
 			$product_resul = $conexion->query($product_query);
 		    $product_rows = $product_resul->num_rows;
 		    if ($product_rows == 0) {
-		        echo "No se encuentras productos de <span class='text-info'>$cat_chosen</span> en la base de datos";
+		        echo "No se encuentran productos de <span class='text-info'>$cat_chosen</span> en la base de datos";
 		    }else{
 		        while ($fila_product = $product_resul->fetch_array()) {
 		            extract($fila_product);
@@ -48,7 +48,7 @@
 		                    <td>$id_usuario</td>
 		                    <td>$nombre</td>
 		                    <td>$tipo_usuario</td>
-		                    <td><a class='pull-right btn btn-danger btn-sm'>Borrar</a>
+		                    <td><a href='../controller/delete.php?item=$id_usuario' class='pull-right btn btn-danger btn-sm'>Borrar</a>
 		                 </tr>";
 		        }
 		    }

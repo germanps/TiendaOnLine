@@ -76,7 +76,7 @@
 												<td>$nombre</td>
 												<td>$password</td>
 												<td>$tipo_usuario</td>
-												<td><a id='editUser' class='pull-right btn btn-warning btn-sm' data-toggle='modal' data-target='#edit_user_modal'>Editar</a>
+												<td><button class='edit-usu pull-right btn btn-warning btn-sm' data-toggle='modal' data-target='#edit_user_modal'>Editar</button>
                                                     <a href='drop_item.php?item=$id_usuario' class='pull-right btn btn-danger btn-sm'>Borrar</a>
                                                 </td>
 											 </tr>";
@@ -122,7 +122,7 @@
                                                 <td class='text-muted'>$contador_cat</td>
                                                 <td>$id_categoria</td>
                                                 <td>$cat_nombre</td>
-                                                <td><button class='pull-right btn btn-warning btn-sm' data-toggle='modal' data-target='#edit_category_modal'>Editar</button><button class='pull-right btn btn-danger btn-sm'>Borrar</button></td>
+                                                <td><button class='edit-cat pull-right btn btn-warning btn-sm' data-toggle='modal' data-target='#edit_category_modal'>Editar</button><button class='pull-right btn btn-danger btn-sm'>Borrar</button></td>
                                              </tr>";
                                              $contador_cat++;
                                     }
@@ -174,7 +174,7 @@
                                                 <td>$product_nombre</td>
                                                 <td>$descripcion</td>
                                                 <td>$cantidad</td>
-                                                <td><button class='pull-right btn btn-warning btn-sm' data-toggle='modal' data-target='#edit_product_modal'>Editar</button><button class='pull-right btn btn-danger btn-sm'>Borrar</button></td>
+                                                <td><button class='edit-product pull-right btn btn-warning btn-sm' data-toggle='modal' data-target='#edit_product_modal'>Editar</button><button class='pull-right btn btn-danger btn-sm'>Borrar</button></td>
                                              </tr>";
                                              $contador_product++;
                                     }
@@ -220,7 +220,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary"">Añadir usuario</button>
+                    <button type="submit" class="btn btn-primary">Añadir usuario</button>
                 </div>
             </form>
         </div>
@@ -330,7 +330,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="submit" class="btn btn-primary"">Modificar usuario</button>
+                    <button type="submit" class="btn btn-primary">Modificar usuario</button>
                 </div>
             </form>
         </div>
