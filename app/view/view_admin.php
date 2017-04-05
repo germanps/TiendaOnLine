@@ -36,7 +36,7 @@
                 <button class="btn btn-info" data-toggle="modal" data-target="#add_new_user_modal">Nuevo usuario</button>
                 <button class="btn btn-info" data-toggle="modal" data-target="#add_new_category_modal">Agregar categoria</button>
                 <button class="btn btn-info" data-toggle="modal" data-target="#add_new_product_modal">Agregar producto</button>
-                <button class="btn btn-default" data-toggle="modal" data-target="#view_stock_modal">Ver stock</button>
+                <a class="btn btn-default" href="show_stock.php">Ver stock</a>
             </div>
         </div>
     </div>
@@ -77,7 +77,7 @@
 												<td>$password</td>
 												<td>$tipo_usuario</td>
 												<td><button class='edit-usu pull-right btn btn-warning btn-sm' data-toggle='modal' data-target='#edit_user_modal'>Editar</button>
-                                                    <a href='drop_item.php?item=$id_usuario' class='pull-right btn btn-danger btn-sm'>Borrar</a>
+                                                    <a href='drop_usu.php?item=$id_usuario' class='pull-right btn btn-danger btn-sm'>Borrar</a>
                                                 </td>
 											 </tr>";
 											 $contador_usuarios++;
@@ -415,41 +415,6 @@
 </div>
 <!-- // Modal edit Product-->
 
-<!-- Modal - Update User details -->
-<!-- <div class="modal fade" id="update_user_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Update</h4>
-            </div>
-            <div class="modal-body">
-
-                <div class="form-group">
-                    <label for="update_first_name">First Name</label>
-                    <input type="text" id="update_first_name" placeholder="First Name" class="form-control"/>
-                </div>
-
-                <div class="form-group">
-                    <label for="update_last_name">Last Name</label>
-                    <input type="text" id="update_last_name" placeholder="Last Name" class="form-control"/>
-                </div>
-
-                <div class="form-group">
-                    <label for="update_email">Email Address</label>
-                    <input type="text" id="update_email" placeholder="Email Address" class="form-control"/>
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" onclick="UpdateUserDetails()" >Save Changes</button>
-                <input type="hidden" id="hidden_user_id">
-            </div>
-        </div>
-    </div>
-</div> -->
-<!-- // Modal -->
 
 <!-- Jquery JS file -->
 <script type="text/javascript" src="../src/js/vendor/jquery-3.1.1.js"></script>

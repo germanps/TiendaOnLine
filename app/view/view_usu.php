@@ -49,6 +49,15 @@
 		    </form>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-12">
+            <?php 
+                //echo $_SESSION['amount'];
+                echo "<br>";
+               // echo $_SESSION['producto'];
+             ?>
+        </div>
+    </div>
 </div>
 
 

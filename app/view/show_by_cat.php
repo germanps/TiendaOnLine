@@ -58,7 +58,7 @@
 		                    <td>$cat_nombre</td>
 		                    <td>$id_categoria</td>
 		                    <td>$cantidad</td>
-		                    <td><button class='pull-right btn btn-warning btn-sm' data-toggle='modal' data-target='#edit_product_modal'>Comprar</button>
+		                    <td><button class='pull-right btn btn-warning btn-sm' data-toggle='modal' data-target='#buy_product_modal'>Comprar</button>
 		                 </tr>";
 		                 $contador_product++;
 		        }
@@ -68,12 +68,38 @@
 		</table>
 		<div class="row">
 			<div class="col-lg-6">
-				<a href="view_usu.php" class="btn btn-succes">Volver</a>
+				<a href="view_usu.php" class="btn btn-info">Volver</a>
 			</div>
 		</div>
 		</div>
 	</div>
+</div> <!-- //container -->
+
+<!-- Modal buy-->
+<div class="modal fade" id="buy_product_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method='post' action='view_usu.php' role="form">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Comprar producto</h4>
+                </div>
+                <div class="modal-body">
+
+                    <div class="form-group">
+                        <label for="amountBuyId">Cantidad</label>
+                        <input name="amountBuy" type="number" id="amountBuyId" placeholder="Nombre" class="form-control"/>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Comprar</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
+<!-- // Modal Category-->
 
 <!-- Jquery JS file -->
 <script type="text/javascript" src="../src/js/vendor/jquery-3.1.1.js"></script>
