@@ -1,4 +1,5 @@
 <?php 
+	session_start();
 	require("conexion.php");
 	$nombre_cat = $_POST["nameCategory"];
 

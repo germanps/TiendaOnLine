@@ -1,24 +1,16 @@
 <?php 
 	session_start();
 	require('../controller/conexion.php');
-
+    include('header.html');
  ?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<title>Tienda Online - Administrador</title>
-	<link rel="stylesheet" href="../src/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../src/css/main.css">
-	<!-- <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> -->
-</head>
-<body>
 
-<!-- Content Section -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h2>Admin</h2>
+        </div>
+        <div class="col-sm-6 col-xs-6">
+            <div class="log-user pull-right">
+                <span class=""># <?php echo $_SESSION['admin_user'] ?> #</span>
+                <a id="logOut" class="pull-right btn btn-sm btn-danger" href="../controller/disconnect.php">Desconectar</a>
+            </div>
+            
         </div>
     </div>
 

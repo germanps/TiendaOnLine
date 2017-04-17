@@ -10,23 +10,20 @@
 		while($fila = $usu_resul->fetch_array()){
 			extract($fila);
 			if ($nombre == $usu && $password == $pwd) {
-				echo "coincide usuario<br>";
+				//echo "coincide usuario<br>";
 				if ($tipo_usuario == 0) {
+					$_SESSION['admin_user'] = $usu;
 					header('Location:../view/view_admin.php');
-				}else{;
+				}else{
+					$_SESSION['usu_user'] = $usu;
 					header('Location:../view/view_usu.php');
 				}
 				
-			}else{
-				echo "<p>Error, datos introducidos incorrectos</p>";
-				echo "<p>Redireccionando...</p>";
-				header("Refresh: 3; url=".$_SERVER['HTTP_REFERER']);//volvemos atrás
 			}
 			
 		}
-	}else{
-		echo "<p>Redireccionando...</p>";
-		header("Refresh: 1; url=".$_SERVER['HTTP_REFERER']);//volvemos atrás
-	}	
-
+	}
+	echo "<p>Error de login<p>";
+	echo "<p>Redireccionando...</p>";
+	header("Refresh: 1; url=".$_SERVER['HTTP_REFERER']);//volvemos atrás
 ?>

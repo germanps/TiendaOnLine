@@ -1,0 +1,12 @@
+Funcionamiento:
+
+*Crear base de datos con nombre 'tienda' en phpmyadmin.
+*Importar el archivo 'tienda.sql' del directorio db_tienda en la base de datos creada.
+*Para hacer login como admin -> Usuario:German # Password:1234;
+*Para hacer login como usuario-> Usuario:Cira # Password:1234;
+
+Feliz compra!
+
+
+
+El equipo de SqüaløBcN

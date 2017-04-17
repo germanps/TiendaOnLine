@@ -1,33 +1,20 @@
 <?php 
 	session_start();
 	require('../controller/conexion.php');
-
-	function insert_usuario($conexion){
-		$nombre = 'Cira';
-		$pwd = '1234';
-		$insert_query="insert into usuario (nombre, password, tipo_usuario) values ('$nombre','$pwd', 1)";
-		$conexion->query($insert_query);
-	}
-	//insert_usuario($conexion);
+    include('header.html');
+    if (!isset($_SESSION['admin_user'])) {
+        //echo "No existe el usuario...";
+        header('Location:../index.php');
+    }
  ?>
 
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<title>Tienda Online - Administrador</title>
-	<link rel="stylesheet" href="../src/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../src/css/main.css">
-	<!-- <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"> -->
-</head>
-<body>
-
-<!-- Content Section -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h2>Admin</h2>
+            <p class="text-info">Usuario Administrador - <?php echo $_SESSION['admin_user'] ?></p>
+        </div>
+        <div class="col-sm-6 col-xs-6">
+            <div class="log-user pull-right">
+                <span class=""># <?php echo $_SESSION['admin_user'] ?> #</span>
+                <a id="logOut" class="pull-right btn btn-sm btn-danger" href="../controller/disconnect.php">Desconectar</a>
+            </div>
         </div>
     </div>
     <div class="row">
@@ -46,6 +33,7 @@
             <h3>Usuarios</h3>
             <div class="table-toggle">
             	<button id="seeUsers" class="btn btn-warning btn-sm">Mostrar datos</button>
+               
             	<div id="showUsers">
 		            <table class="table table-striped table-hover">
 		            	<thead>
@@ -89,6 +77,7 @@
 		            </table>
 	            </div>
 			</div>
+             
         </div>
     </div> <!-- /ROW USUARIOS -->
     <!-- ROW CATEGORIAS -->
@@ -122,7 +111,8 @@
                                                 <td class='text-muted'>$contador_cat</td>
                                                 <td>$id_categoria</td>
                                                 <td>$cat_nombre</td>
-                                                <td><button class='edit-cat pull-right btn btn-warning btn-sm' data-toggle='modal' data-target='#edit_category_modal'>Editar</button><button class='pull-right btn btn-danger btn-sm'>Borrar</button></td>
+                                                <td><button class='edit-cat pull-right btn btn-warning btn-sm' data-toggle='modal' data-target='#edit_category_modal'>Editar</button> <a href='drop_cat.php?item=$id_categoria' class='pull-right btn btn-danger btn-sm'>Borrar</a>
+                                                </td>
                                              </tr>";
                                              $contador_cat++;
                                     }
@@ -174,7 +164,9 @@
                                                 <td>$product_nombre</td>
                                                 <td>$descripcion</td>
                                                 <td>$cantidad</td>
-                                                <td><button class='edit-product pull-right btn btn-warning btn-sm' data-toggle='modal' data-target='#edit_product_modal'>Editar</button><button class='pull-right btn btn-danger btn-sm'>Borrar</button></td>
+                                                <td><button class='edit-product pull-right btn btn-warning btn-sm' data-toggle='modal' data-target='#edit_product_modal'>Editar</button>
+                                                    <a href='drop_product.php?item=$id_producto' class='pull-right btn btn-danger btn-sm'>Borrar</a>
+                                                </td>
                                              </tr>";
                                              $contador_product++;
                                     }
@@ -271,7 +263,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="nameCatProduct">ID Categoria</label>
+                        <label for="nameCatProduct">ID Categoria <span class="text-warning">(Introducir id de categoria correcto)<span></label>
                         <input name="idCatProduct" type="number" id="nameCatProduct" placeholder="ID Categoria" class="form-control"/>
                     </div>
 
@@ -390,8 +382,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="set_nameCatProductId">ID Categoria</label>
-                        <input name="set_nameCatProduct" type="number" id="set_nameCatProductId" placeholder="ID Categoria" class="form-control"/>
+                        <label for="set_nameCatProductId">Categoria</label>
+                        <input name="set_nameCatProduct" type="text" id="set_nameCatProductId" placeholder="ID Categoria" class="form-control" disabled/>
                     </div>
 
                     <div class="form-group">

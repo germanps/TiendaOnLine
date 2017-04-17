@@ -25,34 +25,35 @@
     	 	<table class="table table-striped table-hover">
 	    	 	<thead>
 	        		<tr>
-	        			<th>ID Usuario</th>
-	        			<th>Nombre Usuario</th>
-	        			<th>Tipo</th>
+	        			<th>ID producto</th>
+	        			<th>Nombre producto</th>
+	        			<th>Descripción</th>
+	        			<th>Cantidad</th>
 	        			<th class="text-right">Acciones</th>
 	        		</tr>
 	        	</thead>
 	        	<tbody>
 				<?php
-				$usu_delete = $_GET['item'];
-				echo "<h3 class='text-warning'>Borrar Usuario</h3>";
-				$usu_query = "select * from usuario where id_usuario=$usu_delete";
-				$usu_resul = $conexion->query($usu_query);
-			    $usu_rows = $usu_resul->num_rows;
-			    if ($usu_rows == 0) {
-			        echo "No se encuentran el usuario";
+				$product_delete = $_GET['item'];
+				echo "<h3 class='text-warning'>Borrar Producto</h3>";
+				$product_query = "select * from productos where id_producto=$product_delete";
+				$product_resul = $conexion->query($product_query);
+			    $product_rows = $product_resul->num_rows;
+			    if ($product_rows == 0) {
+			        echo "No se encuentra el producto";
 			    }else{
-			        while ($fila_usu = $usu_resul->fetch_array()) {
-			            extract($fila_usu);
+			        while ($fila_product = $product_resul->fetch_array()) {
+			            extract($fila_product);
 
 			            echo "<tr>
-			                    <td>$id_usuario</td>
-			                    <td>$nombre</td>
-			                    <td>$tipo_usuario</td>
-			                    <td><a href='../controller/delete_usu.php?item=$id_usuario' class='pull-right btn btn-danger btn-sm'>Borrar</a>
+			                    <td>$id_producto</td>
+			                    <td>$product_nombre</td>
+			                    <td>$descripcion</td>
+			                    <td>$cantidad</td>
+			                    <td><a href='../controller/delete_product.php?item=$id_producto' class='pull-right btn btn-danger btn-sm'>Borrar</a>
 			                 </tr>";
 			        }
 			    }
-			    $conexion->close();
 				?>
 				</tbody>
 			</table>

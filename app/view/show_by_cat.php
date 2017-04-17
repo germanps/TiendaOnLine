@@ -31,7 +31,7 @@
         			<th>Descripcion</th>
         			<th>Categoria</th>
         			<th>Id Categoria</th>
-        			<th>Stock</th>
+        			<!-- <th>Stock</th> -->
         			<th class="text-right">Acciones</th>
         		</tr>
         	</thead>
@@ -57,8 +57,8 @@
 		                    <td>$descripcion</td>
 		                    <td>$cat_nombre</td>
 		                    <td>$id_categoria</td>
-		                    <td>$cantidad</td>
-		                    <td><button class='pull-right btn btn-warning btn-sm' data-toggle='modal' data-target='#buy_product_modal'>Comprar</button>
+		                    
+		                    <td><button class='compra-pro pull-right btn btn-warning btn-sm' data-toggle='modal' data-target='#buy_product_modal'>Comprar</button>
 		                 </tr>";
 		                 $contador_product++;
 		        }
@@ -79,16 +79,21 @@
 <div class="modal fade" id="buy_product_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form method='post' action='view_usu.php' role="form">
+            <form method='post' action='../controller/buy_product.php' role="form">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Comprar producto</h4>
                 </div>
                 <div class="modal-body">
 
+                	 <div class="form-group">
+                        <label for="idProducto">Id Producto</label>
+                        <input name="buy_product" type="number" id="idProducto"  class="form-control"/>
+                    </div>
+
                     <div class="form-group">
                         <label for="amountBuyId">Cantidad</label>
-                        <input name="amountBuy" type="number" id="amountBuyId" placeholder="Nombre" class="form-control"/>
+                        <input name="amountBuy" type="number" id="amountBuyId" placeholder="Cantidad" class="form-control"/>
                     </div>
 
                 </div>

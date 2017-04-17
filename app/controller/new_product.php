@@ -1,4 +1,5 @@
 <?php 
+	session_start();
 	require("conexion.php");
 	$nombre_pro = $_POST["nameProduct"];
 	$descripcion_pro = $_POST["descProduct"];

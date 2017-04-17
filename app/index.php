@@ -1,5 +1,7 @@
 <?php 
 	session_start();
+	$_SESSION['articulos_final'] =  array();
+	$_SESSION['cantidad_final'] =  array();
  ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -12,6 +14,7 @@
 </head>
 <body>
 	<div class="sq-container">
+	<h2 class="text-center  text-warning">Bienvenidos a la tienda OnLine <span class="text-danger">#SqüaløBcN#</span></h2>
 		<div class="sq-form-wrapper">
 			<form class="form-horizontal" method="post" action="controller/access.php">
 			  <fieldset>
@@ -27,11 +30,11 @@
 			      <label for="inputPassword" class="col-lg-2 control-label">Password</label>
 			      <div class="col-lg-10">
 			        <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password">
-			        <div class="checkbox">
+			        <!-- <div class="checkbox">
 			          <label>
 			            <input type="checkbox"> Recordar
 			          </label>
-			        </div>
+			        </div> -->
 			      </div>
 			    </div>
 			    <div class="form-group">
